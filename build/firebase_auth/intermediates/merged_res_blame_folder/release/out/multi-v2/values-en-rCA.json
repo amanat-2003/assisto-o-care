@@ -1,0 +1,68 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/incremental/mergeReleaseResources/merged.dir/values-en-rCA/values-en-rCA.xml",
+            "map": [
+                {
+                    "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/values-en-rCA/values-en-rCA.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "458",
+                        "endColumns": "100",
+                        "endOffsets": "554"
+                    }
+                },
+                {
+                    "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/4bcc4fe16f4d1a0a076b7a30c8dc4029/browser-1.4.0/res/values-en-rCA/values-en-rCA.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,153,250,359",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "148,245,354,453"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/values-en-rCA/values-en-rCA.xml",
+            "map": [
+                {
+                    "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/values-en-rCA/values-en-rCA.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "458",
+                        "endColumns": "100",
+                        "endOffsets": "554"
+                    }
+                },
+                {
+                    "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/4bcc4fe16f4d1a0a076b7a30c8dc4029/browser-1.4.0/res/values-en-rCA/values-en-rCA.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,153,250,359",
+                        "endColumns": "97,96,108,98",
+                        "endOffsets": "148,245,354,453"
+                    }
+                }
+            ]
+        }
+    ]
+}

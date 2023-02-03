@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/flutter_bluetooth_serial/intermediates/res/merged/release/layout-watch-v20/abc_alert_dialog_button_bar_material.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/b51802a4c15737ee08e9d3b786950aa9/appcompat-1.3.0/res/layout-watch-v20/abc_alert_dialog_button_bar_material.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/flutter_bluetooth_serial/intermediates/res/merged/release/layout-watch-v20/abc_alert_dialog_title_material.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/b51802a4c15737ee08e9d3b786950aa9/appcompat-1.3.0/res/layout-watch-v20/abc_alert_dialog_title_material.xml"
+    }
+]

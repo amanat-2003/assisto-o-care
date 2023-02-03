@@ -1,0 +1,4 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+io/github/edufolly/flutterbluetoothserialexample/BuildConfig.java
+ io.github.edufolly.flutterbluetoothserialexample.BuildConfig

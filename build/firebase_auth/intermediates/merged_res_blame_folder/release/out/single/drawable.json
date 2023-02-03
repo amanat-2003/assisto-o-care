@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_text_light.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_icon_light.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_icon_disabled.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_text_disabled.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_icon_light_focused.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_text_light_focused.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_text_light_focused.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_icon_dark_normal.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_text_light_normal.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_text_dark_focused.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/notification_bg.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/notification_bg_low.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_icon_dark.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_text_dark_normal.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/notification_tile_bg.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/notification_icon_background.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_icon_light_normal.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/drawable/common_google_signin_btn_icon_dark_focused.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/5a4d8df282781cc044723b4ffb7c225c/jetified-play-services-base-17.1.0/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
+    }
+]

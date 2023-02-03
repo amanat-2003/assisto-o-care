@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/cloud_firestore/intermediates/res/merged/release/color/common_google_signin_btn_text_dark.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/08c485211743d056a606ce8bf66f41b6/jetified-play-services-base-18.0.1/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/cloud_firestore/intermediates/res/merged/release/color/common_google_signin_btn_text_light.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/08c485211743d056a606ce8bf66f41b6/jetified-play-services-base-18.0.1/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/cloud_firestore/intermediates/res/merged/release/color/common_google_signin_btn_tint.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/08c485211743d056a606ce8bf66f41b6/jetified-play-services-base-18.0.1/res/color/common_google_signin_btn_tint.xml"
+    }
+]

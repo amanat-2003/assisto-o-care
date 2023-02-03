@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/shared_preferences_android/intermediates/res/merged/debug/drawable/notification_bg.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/shared_preferences_android/intermediates/res/merged/debug/drawable/notification_icon_background.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/shared_preferences_android/intermediates/res/merged/debug/drawable/notification_bg_low.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/shared_preferences_android/intermediates/res/merged/debug/drawable/notification_tile_bg.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/drawable/notification_tile_bg.xml"
+    }
+]

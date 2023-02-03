@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/layout/notification_template_icon_group.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/layout/notification_template_part_time.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/layout/notification_action_tombstone.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/layout/custom_dialog.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/layout/notification_action.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/0067a62c9b7f72160c12c6a6f12b6ce3/core-1.6.0/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/layout/browser_actions_context_menu_page.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/4bcc4fe16f4d1a0a076b7a30c8dc4029/browser-1.4.0/res/layout/browser_actions_context_menu_page.xml"
+    },
+    {
+        "merged": "/Users/amanatsingh/Development/projects/glove_app_git/glove_app/build/firebase_auth/intermediates/res/merged/release/layout/browser_actions_context_menu_row.xml",
+        "source": "/Users/amanatsingh/.gradle/caches/transforms-2/files-2.1/4bcc4fe16f4d1a0a076b7a30c8dc4029/browser-1.4.0/res/layout/browser_actions_context_menu_row.xml"
+    }
+]
