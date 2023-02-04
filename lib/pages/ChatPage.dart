@@ -137,9 +137,11 @@ class _ChatPage extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
-    List<_HandData> dataList = messages.map((message) {
+    List<_HandData> dataList = [
+      _HandData(resistanceFirst: 2323, resistanceSecond: 2456, resistanceThird: 1890, resistanceForth: 2467, resistanceThumb: 2654, resistancePalm: 0, angleFirst: 32, angleSecond: 23, angleThird: 45, angleForth: 78, angleThumb: 95, anglePalm: 0),
+      ...messages.map((message) {
       return _HandData.fromMessage(message);
-    }).toList();
+    }).toList()];
 
     final List<Row> list = messages.map((_message) {
       return Row(
@@ -191,9 +193,41 @@ class _ChatPage extends State<ChatPage> {
           children: <Widget>[
             Flexible(
               child: ListView(
-                  padding: const EdgeInsets.all(12.0),
-                  controller: listScrollController,
-                  children: list),
+                padding: const EdgeInsets.all(12.0),
+                children: [
+                  ListTile(
+                    title: Text('First Finger', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    leading: Icon(Icons.looks_one_outlined),
+                    trailing: Text('${dataList.last.angleFirst.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                  ),
+                  ListTile(
+                    title: Text('Second Finger', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    leading: Icon(Icons.looks_two_outlined),
+                    trailing: Text('${dataList.last.angleSecond.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                  ),
+                  ListTile(
+                    title: Text('Third Finger', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    leading: Icon(Icons.looks_3_outlined),
+                    trailing: Text('${dataList.last.angleThird.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                  ),
+                  ListTile(
+                    title: Text('Forth Finger', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    leading: Icon(Icons.looks_4_outlined),
+                    trailing: Text('${dataList.last.angleForth.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                  ),
+                  ListTile(
+                    title: Text('Thumb', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    leading: Icon(Icons.looks_5_outlined),
+                    trailing: Text('${dataList.last.angleThumb.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                  ),
+                  ListTile(
+                    title: Text('Palm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    leading: Icon(Icons.looks_6_outlined),
+                    trailing: Text('${dataList.last.anglePalm.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                  ),
+
+                ],
+              ),
             ),
             Row(
               children: <Widget>[
@@ -293,10 +327,10 @@ class _ChatPage extends State<ChatPage> {
           messages.add(_Message(clientID, text));
         });
 
-        Future.delayed(Duration(milliseconds: 333)).then((_) {
+        Future.delayed(Duration(milliseconds: 500)).then((_) {
           listScrollController.animateTo(
               listScrollController.position.maxScrollExtent,
-              duration: Duration(milliseconds: 333),
+              duration: Duration(milliseconds: 500),
               curve: Curves.easeOut);
         });
       } catch (e) {
