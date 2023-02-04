@@ -9,7 +9,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-import '../../MainPage.dart';
+import '../MainPage.dart';
 import '../../helper/helper_function.dart';
 import '../../service/auth_service.dart';
 import '../../service/database_service.dart';

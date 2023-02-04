@@ -2,7 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-import './MainPage.dart';
+import 'pages/MainPage.dart';
 import 'helper/helper_function.dart';
 import 'pages/auth/login_register_page.dart';
 import 'service/functions.dart';
