@@ -239,7 +239,8 @@ class _PropertiesPageState extends State<PropertiesPage> {
             ListTile(
               title: ElevatedButton(
                   child: const Text('Explore discovered devices'),
-                  onPressed: () async {
+                  onPressed: _bluetoothState.isEnabled ? 
+                  () async {
                     final BluetoothDevice? selectedDevice =
                         await Navigator.of(context).push(
                       MaterialPageRoute(
@@ -254,7 +255,7 @@ class _PropertiesPageState extends State<PropertiesPage> {
                     } else {
                       print('Discovery -> no device selected');
                     }
-                  }),
+                  }:null),
             ),
             
             Divider(),

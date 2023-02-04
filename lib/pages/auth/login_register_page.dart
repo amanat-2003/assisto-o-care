@@ -1,9 +1,3 @@
-// import 'package:chatting_app/MainPage.dart';
-// import 'package:chatting_app/helper/helper_function.dart';
-// import 'package:chatting_app/service/auth_service.dart';
-// import 'package:chatting_app/service/database_service.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
@@ -14,8 +8,6 @@ import '../../helper/helper_function.dart';
 import '../../service/auth_service.dart';
 import '../../service/database_service.dart';
 import '../../widgets/widgets.dart';
-
-// import '../../../widgets/widgets.dart';
 
 enum AuthMode { register, login }
 
@@ -152,11 +144,12 @@ class _LoginRegisterPageState extends State<LoginRegisterPage>
                 ),
                 child: Column(
                   children: [
-                    const Text(
-                      'Glove',
+                    Text(
+                      'Assist-O-Care',
                       style: TextStyle(
                         fontSize: 35,
                         fontWeight: FontWeight.bold,
+                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                     Text(

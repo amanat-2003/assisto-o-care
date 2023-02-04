@@ -11,7 +11,7 @@ class BluetoothDeviceListEntry extends ListTile {
   }) : super(
           onTap: onTap,
           onLongPress: onLongPress,
-          enabled: device.name == 'Glove'? enabled:false,
+          enabled: enabled,
           leading: Icon(device.name == 'Glove'
               ? Icons.front_hand_outlined
               : Icons.devices, color: device.name == 'Glove'? Colors.orange:null), // @TODO . !BluetoothClass! class aware icon

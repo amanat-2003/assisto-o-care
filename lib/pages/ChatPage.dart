@@ -33,7 +33,7 @@ class _ChatPage extends State<ChatPage> {
   final ScrollController listScrollController = new ScrollController();
 
   bool isConnecting = true;
-  bool get isConnected => (connection?.isConnected ?? false);
+  bool get       isConnected => (connection?.isConnected ?? false);
 
   bool isDisconnecting = false;
 
@@ -91,7 +91,7 @@ class _ChatPage extends State<ChatPage> {
           Container(
             child: Text(
                 (text) {
-                  return text == '/shrug' ? '¯\\_(ツ)_/¯' : text;
+                  return text == '/shrug' ? '¯\\_(ツ)_/¯' : 'Readings are : \n$text';
                 }(_message.text.trim()),
                 style: TextStyle(color: Colors.white)),
             padding: EdgeInsets.all(12.0),
@@ -103,20 +103,29 @@ class _ChatPage extends State<ChatPage> {
                 borderRadius: BorderRadius.circular(7.0)),
           ),
         ],
-        mainAxisAlignment: _message.whom == clientID
-            ? MainAxisAlignment.end
-            : MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
       );
     }).toList();
 
     final serverName = widget.server.name ?? "Unknown";
     return Scaffold(
       appBar: AppBar(
-          title: (isConnecting
-              ? Text('Connecting chat to ' + serverName + '...')
-              : isConnected
-                  ? Text('Live chat with ' + serverName)
-                  : Text('Chat log with ' + serverName))),
+        title: (isConnecting
+            ? Text('Connecting to ' + serverName)
+            : isConnected
+                ? Text('Connected to ' + serverName)
+                : Text('Disconnected from ' + serverName)),
+        actions: [FittedBox(
+                  child: Container(
+                    margin: new EdgeInsets.symmetric(vertical: 20.0, horizontal: 40),
+                    child: isConnecting? CircularProgressIndicator(
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        Colors.white,
+                      ),
+                    ): Icon(Icons.done),
+                  ),
+                )],
+      ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
@@ -139,7 +148,7 @@ class _ChatPage extends State<ChatPage> {
                             ? 'Wait until connected...'
                             : isConnected
                                 ? 'Type your message...'
-                                : 'Chat got disconnected',
+                                : 'Glove got disconnected',
                         hintStyle: const TextStyle(color: Colors.grey),
                       ),
                       enabled: isConnected,
