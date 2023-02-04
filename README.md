@@ -1,6 +1,6 @@
-# `flutter_bluetooth_serial_example`
+# `assist-o-care`
 
-Example application demonstrates key features of the `flutter_bluetooth_serial` plugin:
+assist-o-care demonstrates key features of the `flutter_bluetooth_serial` plugin:
 
 + Adapter status monitoring,
 
