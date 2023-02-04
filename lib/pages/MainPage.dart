@@ -114,24 +114,48 @@ class _MainPage extends State<MainPage> {
             ListTile(
               title: ElevatedButton(
                 child: const Text('Connect to Glove and Start Taking Readings'),
-                onPressed: () async {
-                  final BluetoothDevice? selectedDevice =
-                      await Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) {
-                        return SelectBondedDevicePage(checkAvailability: false);
-                      },
-                    ),
-                  );
+                onPressed: _bluetoothState.isEnabled
+                    ? () async {
+                        final BluetoothDevice? selectedDevice =
+                            await Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return SelectBondedDevicePage(
+                                  checkAvailability: false);
+                            },
+                          ),
+                        );
 
-                  if (selectedDevice != null) {
-                    print('Connect -> selected ' + selectedDevice.address);
-                    _startChat(context, selectedDevice);
-                  } else {
-                    print('Connect -> no device selected');
-                  }
-                },
+                        if (selectedDevice != null) {
+                          print(
+                              'Connect -> selected ' + selectedDevice.address);
+                          _startChat(context, selectedDevice);
+                        } else {
+                          print('Connect -> no device selected');
+                        }
+                      }
+                    : null,
               ),
+            ),
+            SwitchListTile(
+              title: Text(
+                  'Bluetooth Turned ${_bluetoothState.isEnabled ? 'on' : 'off'}'),
+              subtitle: Text(_bluetoothState.isEnabled ? 'You can connect to glove':'Please turn the bluetooth on'),
+              value: _bluetoothState.isEnabled,
+              onChanged: (bool value) {
+                // Do the request and update with the true value then
+                future() async {
+                  // async lambda seems to not working
+                  if (value)
+                    await FlutterBluetoothSerial.instance.requestEnable();
+                  else
+                    await FlutterBluetoothSerial.instance.requestDisable();
+                }
+
+                future().then((_) {
+                  setState(() {});
+                });
+              },
             ),
           ],
         ),

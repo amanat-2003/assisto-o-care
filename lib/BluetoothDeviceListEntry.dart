@@ -11,11 +11,12 @@ class BluetoothDeviceListEntry extends ListTile {
   }) : super(
           onTap: onTap,
           onLongPress: onLongPress,
-          enabled: enabled,
-          leading:
-              Icon(Icons.devices), // @TODO . !BluetoothClass! class aware icon
-          title: Text(device.name ?? ""),
-          subtitle: Text(device.address.toString()),
+          enabled: device.name == 'Glove'? enabled:false,
+          leading: Icon(device.name == 'Glove'
+              ? Icons.front_hand_outlined
+              : Icons.devices, color: device.name == 'Glove'? Colors.orange:null), // @TODO . !BluetoothClass! class aware icon
+          title: Text(device.name ?? "", style: TextStyle(color: device.name == 'Glove'? Colors.orange:null),),
+          subtitle: Text(device.address.toString(), style: TextStyle(color: device.name == 'Glove'? Colors.orange:null),),
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -35,10 +36,10 @@ class BluetoothDeviceListEntry extends ListTile {
                     )
                   : Container(width: 0, height: 0),
               device.isConnected
-                  ? Icon(Icons.import_export)
+                  ? Icon(Icons.import_export, color: device.name == 'Glove'? Colors.orange:null)
                   : Container(width: 0, height: 0),
               device.isBonded
-                  ? Icon(Icons.link)
+                  ? Icon(device.name == 'Glove'?Icons.done:Icons.cancel_outlined, color: device.name == 'Glove'? Colors.orange:null)
                   : Container(width: 0, height: 0),
             ],
           ),
