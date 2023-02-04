@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
@@ -21,6 +22,57 @@ class _Message {
   _Message(this.whom, this.text);
 }
 
+class _HandData {
+  int? resistanceFirst;
+  int? resistanceSecond;
+  int? resistanceThird;
+  int? resistanceForth;
+  int? resistanceThumb;
+  int? resistancePalm;
+
+  int? angleFirst;
+  int? angleSecond;
+  int? angleThird;
+  int? angleForth;
+  int? angleThumb;
+  int? anglePalm;
+
+  _HandData({
+    required this.resistanceFirst,
+    required this.resistanceSecond,
+    required this.resistanceThird,
+    required this.resistanceForth,
+    required this.resistanceThumb,
+    required this.resistancePalm,
+    required this.angleFirst,
+    required this.angleSecond,
+    required this.angleThird,
+    required this.angleForth,
+    required this.angleThumb,
+    required this.anglePalm,
+  });
+
+  _HandData.fromMessage(_Message message) {
+    final re = RegExp(
+        r'(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s*\n*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)');
+    final matches = re.firstMatch(message.text)!;
+
+    resistanceFirst = int.tryParse(matches[1]!);
+    resistanceSecond = int.tryParse(matches[2]!);
+    resistanceThird = int.tryParse(matches[3]!);
+    resistanceForth = int.tryParse(matches[4]!);
+    resistanceThumb = int.tryParse(matches[5]!);
+    resistancePalm = int.tryParse(matches[6]!);
+
+    angleFirst = int.tryParse(matches[7]!);
+    angleSecond = int.tryParse(matches[8]!);
+    angleThird = int.tryParse(matches[9]!);
+    angleForth = int.tryParse(matches[10]!);
+    angleThumb = int.tryParse(matches[11]!);
+    anglePalm = int.tryParse(matches[12]!);
+  }
+}
+
 class _ChatPage extends State<ChatPage> {
   static final clientID = 0;
   BluetoothConnection? connection;
@@ -33,7 +85,7 @@ class _ChatPage extends State<ChatPage> {
   final ScrollController listScrollController = new ScrollController();
 
   bool isConnecting = true;
-  bool get       isConnected => (connection?.isConnected ?? false);
+  bool get isConnected => (connection?.isConnected ?? false);
 
   bool isDisconnecting = false;
 
@@ -85,13 +137,17 @@ class _ChatPage extends State<ChatPage> {
 
   @override
   Widget build(BuildContext context) {
+    List<_HandData> dataList = messages.map((message) {
+      return _HandData.fromMessage(message);
+    }).toList();
+
     final List<Row> list = messages.map((_message) {
       return Row(
         children: <Widget>[
           Container(
             child: Text(
                 (text) {
-                  return text == '/shrug' ? '¯\\_(ツ)_/¯' : 'Readings are : \n$text';
+                  return text == '/shrug' ? '¯\\_(ツ)_/¯' : text;
                 }(_message.text.trim()),
                 style: TextStyle(color: Colors.white)),
             padding: EdgeInsets.all(12.0),
@@ -115,16 +171,20 @@ class _ChatPage extends State<ChatPage> {
             : isConnected
                 ? Text('Connected to ' + serverName)
                 : Text('Disconnected from ' + serverName)),
-        actions: [FittedBox(
-                  child: Container(
-                    margin: new EdgeInsets.symmetric(vertical: 20.0, horizontal: 40),
-                    child: isConnecting? CircularProgressIndicator(
+        actions: [
+          FittedBox(
+            child: Container(
+              margin: new EdgeInsets.symmetric(vertical: 20.0, horizontal: 40),
+              child: isConnecting
+                  ? CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(
                         Colors.white,
                       ),
-                    ): Icon(Icons.done),
-                  ),
-                )],
+                    )
+                  : Icon(Icons.done),
+            ),
+          )
+        ],
       ),
       body: SafeArea(
         child: Column(
