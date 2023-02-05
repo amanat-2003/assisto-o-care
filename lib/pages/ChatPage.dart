@@ -55,9 +55,13 @@ class _HandData {
   _HandData.fromMessage(_Message message) {
     final re = RegExp(
         r'(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s*\n*(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)');
-    final matches = re.firstMatch(message.text)!;
+    // final regExp = RegExp(r'(\d+)\s+');
+    var str = '0 0 0 0 0 0 0 0 0 0 0 0';
+    var ifNoMatches = re.firstMatch(str);
+    // print(ifNoMatches![0]);
+    final matches = re.firstMatch(message.text) ?? ifNoMatches;
 
-    resistanceFirst = int.tryParse(matches[1]!);
+    resistanceFirst = int.tryParse(matches![1]!);
     resistanceSecond = int.tryParse(matches[2]!);
     resistanceThird = int.tryParse(matches[3]!);
     resistanceForth = int.tryParse(matches[4]!);
@@ -74,6 +78,7 @@ class _HandData {
 }
 
 class _ChatPage extends State<ChatPage> {
+  var isVisible = false;
   static final clientID = 0;
   BluetoothConnection? connection;
 
@@ -138,10 +143,25 @@ class _ChatPage extends State<ChatPage> {
   @override
   Widget build(BuildContext context) {
     List<_HandData> dataList = [
-      _HandData(resistanceFirst: 2323, resistanceSecond: 2456, resistanceThird: 1890, resistanceForth: 2467, resistanceThumb: 2654, resistancePalm: 0, angleFirst: 32, angleSecond: 23, angleThird: 45, angleForth: 78, angleThumb: 95, anglePalm: 0),
+      _HandData(
+          resistanceFirst: 2323,
+          resistanceSecond: 2456,
+          resistanceThird: 1890,
+          resistanceForth: 2467,
+          resistanceThumb: 2654,
+          resistancePalm: 0,
+          angleFirst: 32,
+          angleSecond: 23,
+          angleThird: 45,
+          angleForth: 78,
+          angleThumb: 95,
+          anglePalm: 0),
+      _HandData.fromMessage(_Message(1,
+          '1234 2345 3456 4567 5678 0 \n\n     0 33 44 55 66 0  hi sfdljfdskdjf jgfdkshg')),
       ...messages.map((message) {
-      return _HandData.fromMessage(message);
-    }).toList()];
+        return _HandData.fromMessage(message);
+      }).toList()
+    ];
 
     final List<Row> list = messages.map((_message) {
       return Row(
@@ -196,69 +216,202 @@ class _ChatPage extends State<ChatPage> {
                 padding: const EdgeInsets.all(12.0),
                 children: [
                   ListTile(
-                    title: Text('First Finger', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    title: Text(
+                      'Angles',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                          color: Theme.of(context).primaryColor),
+                    ),
+                    leading: Icon(Icons.back_hand_rounded,
+                        color: Theme.of(context).primaryColor, size: 30),
+                  ),
+                  ListTile(
+                    title: Text(
+                      'First Finger',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                    ),
                     leading: Icon(Icons.looks_one_outlined),
-                    trailing: Text('${dataList.last.angleFirst.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                    trailing: Text(
+                      '${dataList.last.angleFirst.toString()}°',
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                    ),
                   ),
                   ListTile(
-                    title: Text('Second Finger', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    title: Text(
+                      'Second Finger',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                    ),
                     leading: Icon(Icons.looks_two_outlined),
-                    trailing: Text('${dataList.last.angleSecond.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                    trailing: Text(
+                      '${dataList.last.angleSecond.toString()}°',
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                    ),
                   ),
                   ListTile(
-                    title: Text('Third Finger', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    title: Text(
+                      'Third Finger',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                    ),
                     leading: Icon(Icons.looks_3_outlined),
-                    trailing: Text('${dataList.last.angleThird.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                    trailing: Text(
+                      '${dataList.last.angleThird.toString()}°',
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                    ),
                   ),
                   ListTile(
-                    title: Text('Forth Finger', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    title: Text(
+                      'Forth Finger',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                    ),
                     leading: Icon(Icons.looks_4_outlined),
-                    trailing: Text('${dataList.last.angleForth.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                    trailing: Text(
+                      '${dataList.last.angleForth.toString()}°',
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                    ),
                   ),
                   ListTile(
-                    title: Text('Thumb', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    title: Text(
+                      'Thumb',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                    ),
                     leading: Icon(Icons.looks_5_outlined),
-                    trailing: Text('${dataList.last.angleThumb.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                    trailing: Text(
+                      '${dataList.last.angleThumb.toString()}°',
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                    ),
                   ),
                   ListTile(
-                    title: Text('Palm', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 19),),
+                    title: Text(
+                      'Palm',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 19),
+                    ),
                     leading: Icon(Icons.looks_6_outlined),
-                    trailing: Text('${dataList.last.anglePalm.toString()}°', style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),),
+                    trailing: Text(
+                      '${dataList.last.anglePalm.toString()}°',
+                      style:
+                          TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                    ),
                   ),
-
+                  ListTile(
+                    title: Text(
+                      'Resistances',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 23,
+                          color: Theme.of(context).primaryColor),
+                    ),
+                    leading: Icon(Icons.handyman,
+                        color: Theme.of(context).primaryColor, size: 23),
+                    trailing: Switch(
+                      value: isVisible,
+                      onChanged: (val) {
+                        setState(() {
+                          isVisible = val;
+                        });
+                      },
+                      materialTapTargetSize: MaterialTapTargetSize.padded,
+                    ),
+                  ),
+                  Visibility(
+                    visible: isVisible,
+                    child: Column(
+                      children: [
+                        ListTile(
+                          title: Text(
+                            'First Finger',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 17),
+                          ),
+                          leading: Icon(Icons.looks_one_outlined, size: 20),
+                          trailing: Text(
+                            '${dataList.last.resistanceFirst.toString()} Ω',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        ListTile(
+                          title: Text(
+                            'Second Finger',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 17),
+                          ),
+                          leading: Icon(Icons.looks_two_outlined, size: 20),
+                          trailing: Text(
+                            '${dataList.last.resistanceSecond.toString()} Ω',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        ListTile(
+                          title: Text(
+                            'Third Finger',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 17),
+                          ),
+                          leading: Icon(Icons.looks_3_outlined, size: 20),
+                          trailing: Text(
+                            '${dataList.last.resistanceThird.toString()} Ω',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        ListTile(
+                          title: Text(
+                            'Forth Finger',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 17),
+                          ),
+                          leading: Icon(Icons.looks_4_outlined, size: 20),
+                          trailing: Text(
+                            '${dataList.last.resistanceForth.toString()} Ω',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        ListTile(
+                          title: Text(
+                            'Thumb',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 17),
+                          ),
+                          leading: Icon(Icons.looks_5_outlined, size: 20),
+                          trailing: Text(
+                            '${dataList.last.resistanceThumb.toString()} Ω',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                        ListTile(
+                          title: Text(
+                            'Palm',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 17),
+                          ),
+                          leading: Icon(Icons.looks_6_outlined, size: 20),
+                          trailing: Text(
+                            '${dataList.last.resistancePalm.toString()} Ω',
+                            style: TextStyle(
+                                fontSize: 15, fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
-            Row(
-              children: <Widget>[
-                Flexible(
-                  child: Container(
-                    margin: const EdgeInsets.only(left: 16.0),
-                    child: TextField(
-                      style: const TextStyle(fontSize: 15.0),
-                      controller: textEditingController,
-                      decoration: InputDecoration.collapsed(
-                        hintText: isConnecting
-                            ? 'Wait until connected...'
-                            : isConnected
-                                ? 'Type your message...'
-                                : 'Glove got disconnected',
-                        hintStyle: const TextStyle(color: Colors.grey),
-                      ),
-                      enabled: isConnected,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.all(8.0),
-                  child: IconButton(
-                      icon: const Icon(Icons.send),
-                      onPressed: isConnected
-                          ? () => _sendMessage(textEditingController.text)
-                          : null),
-                ),
-              ],
-            )
           ],
         ),
       ),
