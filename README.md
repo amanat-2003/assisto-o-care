@@ -1,92 +1,61 @@
-# `assist-o-care`
+# Assist-o-care Application
 
-assist-o-care demonstrates key features of the `flutter_bluetooth_serial` plugin:
+Assist-o-care is a sophisticated application tailored for prosthetic gloves, developed at PGIMER, Chandigarh. This application employs Bluetooth connectivity to acquire precise readings of finger, thumb, and palm movements from patients. It's particularly beneficial for arthritis patients and individuals undergoing physiotherapy, offering a comprehensive solution to measure and monitor their physical progress.
 
-+ Adapter status monitoring,
+## Features
 
-+ Turning adapter on and off,
+- **Bluetooth Connectivity:** Connects to prosthetic gloves to capture accurate readings of finger, thumb, and palm movements.
+- **Firebase Authentication:** Secure login and authentication using Firebase.
+- **State Management:** Efficient state management, routing, and RESTful API implementation using GetX.
+- **Comprehensive Monitoring:** Ideal for arthritis patients and those undergoing physiotherapy, helping them measure and monitor their physical progress.
 
-+ Opening settings,
+## Technology Stack
 
-+ Discovering devices (and requesting discoverability),
+- **Flutter**: The framework used for building the application.
+- **Firebase**: Used for user authentication.
+- **GetX**: Employed for state management, routing, and making RESTful API calls.
+- **Bluetooth**: For connecting and communicating with the prosthetic gloves.
 
-+ Listing bonded devices and pairing new ones,
+## Installation
 
-+ Connecting to multiple devices at the same time,
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/amanat-2003/assisto-o-care.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd assisto-o-care
+   ```
+3. Install the required dependencies:
+   ```bash
+   flutter pub get
+   ```
+4. Connect your device or start an emulator and run the app:
+   ```bash
+   flutter run
+   ```
 
-+ Sending and recieving data (multiple connections).
+## Demo
 
-The plugin (for now) uses Serial Port profile for moving data over RFCOMM, so make sure there is running Service Discovery Protocol that points to SP/RFCOMM channel of the device.
+[![Assist-o-care Demo](https://img.youtube.com/vi/lzuDsZ4yui8/0.jpg)](https://www.youtube.com/watch?v=lzuDsZ4yui8)
 
-#### Screens 
+Click the thumbnail above to watch the demo video on YouTube.
 
-Main screen and options |  Discovery and connecting  |  Simple chat with server  |  Background connection  |
-:---:|:---:|:---:|:---:|
-![](https://i.imgur.com/qeeMsVe.png)  |  ![](https://i.imgur.com/zruuelZ.png)  |  ![](https://i.imgur.com/y5mTUey.png)  |  ![](https://i.imgur.com/3wvwDVo.png)
+## Usage
 
-Note: There screen-shots might be out-dated. Build and see the example app for yourself, you won't regret it. :)
+- **Login/Signup:** Users can log in or sign up using their email and password.
+- **Bluetooth Connection:** Connect the app to the prosthetic gloves via Bluetooth.
+- **Movement Monitoring:** The app captures and displays finger, thumb, and palm movement data.
+- **Progress Tracking:** Track and monitor physical progress over time.
 
-#### Tests 
+## Blog Post
 
-There is a recording of the tests (click for open video as WEBM version):
+For an in-depth understanding of the development process and use cases, check out the blog post: [Assist-o-care Blog](https://amanatsingh.tech/assist-o-care).
 
-[![Test with multiple connections](https://i.imgur.com/rDFrYcS.png)](https://webm.red/qpGg.webm)
+## License
 
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Contact
 
-## General
-
-The basics are simple, so there is no need to write about it so much.
-
-#### Discovery page
-
-On devices list you can long tap to start pairing process. If device is already paired, you can use long tap to unbond it. 
-
-
-
-## Chat example
-
-There is implemented simple chat. Client (the Flutter host) connects to selected from bonded devices server in order to exchange data - asynchronously.
-
-#### Simple (console) server on Raspberry Pi:
-
-1. Enable Bluetooth and pair Raspberry with the Flutter host device (only first time)
-```
-$ sudo bluetoothctl
-# power on
-# agent on
-# scan on
-# pair [MAC of the Flutter host]
-# quit
-```
-
-2. Add SP/RFCOMM entry to the SDP service
-```
-$ sudo sdptool add SP         # There can be channel specified one of 79 channels by adding `--channel N`.
-$ sudo sdptool browse local   # Check on which channel RFCOMM will be operating, to select in next step.
-```
-SDP tool tends to use good (and free) channels, so you don't have to keep track of other services if you let it decide.
-
-3. Start RFCOMM listening
-```
-$ sudo killall rfcomm
-$ sudo rfcomm listen /dev/rfcomm0 N picocom -c /dev/rfcomm0 --omap crcrlf   # `N` should be channel number on which SDP is pointing the SP.
-```
-
-4. Now you can connect and chat to the server with example application using the console. Every character is send to your device and buffered. Only full messages, between new line characters (`\n`) are displayed. You can use `Ctrl+A` and `Ctrl+Q` to exit from `picocom` utility if you want to end stream from server side (and `Ctrl+C` for exit watch-mode of `rfcomm` utility). 
-
-If you experiencing problems with your terminal (some `term_exitfunc` of `picocom` errors), you should try saving good terminal settings (`stty --save > someFile`) and loading them after picocom exits (adding ``; stty `cat someFile` `` to the second command of 3. should do the thing).
-
-You can also use the descriptor (`/dev/rfcomm0`) in other way, not necessarily to run interactive terminal on it, in order to chat. It can be used in various ways, providing more automation and/or abstraction.
-
-
-
-## Background monitor example
-
-For testing multiple connections there were created background data collector, which connects to Arduino controller equiped with `HC-05` Bluetooth interface, 2 `DS18B20` termometers and water pH level meter. There are very nice graphs to displaying the recieved data. 
-
-The example uses Celsius degree, which was chosen because it utilizes standard conditions of water freezing and ice melting points instead of just rolling a dice over periodic table of elements like a Fahrenheit do...
-
-Project of the Arduino side could be found in `/arduino` folder, but there is a note: **the code is prepared for testing in certain environment** and will not work without its hardware side (termometers, pH meter). If you can alter the real termometer code for example for random data generator or your own inputs. 
-
-
+For any inquiries or feedback, feel free to reach out via [LinkedIn](https://www.linkedin.com/in/amanat-coder/) or [Email](mailto:amanatsinghnain@gmail.com).
